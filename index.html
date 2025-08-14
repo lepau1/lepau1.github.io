@@ -18,6 +18,7 @@
       justify-content: center;
       height: 100vh;
       text-align: center;
+      overflow: hidden;
     }
 
     h1 {
@@ -45,6 +46,35 @@
     a.button:hover {
       background-color: #5b6eae;
     }
+
+    .livestream-container {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      width: 320px;
+      height: 180px;
+      z-index: 9999;
+      border: 2px solid #7289da;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px #00000088;
+    }
+
+    .livestream-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    @media (max-width: 500px) {
+      .livestream-container {
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -52,6 +82,10 @@
   <div class="buttons">
     <a class="button" href="https://www.youtube.com/@Lepa_u" target="_blank">YouTube</a>
     <a class="button" href="https://discord.gg/FJN3QjGw4H" target="_blank">Discord</a>
+  </div>
+
+  <div class="livestream-container">
+    <iframe src="https://www.youtube.com/embed/0yuE8qizjKs?autoplay=1&mute=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 </body>
 </html>
