@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #1e1e2f, #29293d);
+      /* background removed! */
       color: white;
       display: flex;
       flex-direction: column;
@@ -19,20 +19,30 @@
       height: 100vh;
       text-align: center;
       overflow: hidden;
+      position: relative;
     }
-
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(30,30,47,0.55);
+      z-index: 0;
+      pointer-events: none;
+    }
+    h1, .buttons, .livestream-container {
+      position: relative;
+      z-index: 1;
+    }
     h1 {
       font-size: 4rem;
       margin-bottom: 0.5em;
     }
-
     .buttons {
       display: flex;
       gap: 2rem;
       flex-wrap: wrap;
       justify-content: center;
     }
-
     a.button {
       padding: 1rem 2rem;
       background-color: #7289da;
@@ -42,11 +52,9 @@
       font-weight: bold;
       transition: background-color 0.3s ease;
     }
-
     a.button:hover {
       background-color: #5b6eae;
     }
-
     .livestream-container {
       position: fixed;
       bottom: 16px;
@@ -59,13 +67,11 @@
       overflow: hidden;
       box-shadow: 0 0 10px #00000088;
     }
-
     .livestream-container iframe {
       width: 100%;
       height: 100%;
       border: 0;
     }
-
     @media (max-width: 500px) {
       .livestream-container {
         width: 100%;
@@ -83,9 +89,15 @@
     <a class="button" href="https://www.youtube.com/@Lepa_u" target="_blank">YouTube</a>
     <a class="button" href="https://discord.gg/FJN3QjGw4H" target="_blank">Discord</a>
   </div>
-
   <div class="livestream-container">
     <iframe src="https://www.youtube.com/embed/i-oqA-fNZHg?autoplay=1&mute=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
+  <script>
+    // Randomly select gif/gif1.gif to gif/gif7.gif as background
+    const gifNum = Math.floor(Math.random() * 7) + 1;
+    const bgGif = `gif/gif${gifNum}.gif`;
+    document.body.style.background = `url('${bgGif}') no-repeat center center fixed`;
+    document.body.style.backgroundSize = 'cover';
+  </script>
 </body>
 </html>
