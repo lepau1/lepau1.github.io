@@ -10,7 +10,6 @@
       margin: 0;
       padding: 0;
       font-family: 'Montserrat', sans-serif;
-      /* background removed! */
       color: white;
       display: flex;
       flex-direction: column;
@@ -20,6 +19,7 @@
       text-align: center;
       overflow: hidden;
       position: relative;
+      /* background removed! JS will set */
     }
     body::before {
       content: "";
@@ -90,9 +90,9 @@
     <a class="button" href="https://discord.gg/XFPhHKKg9Z" target="_blank">Discord</a>
   </div>
   <script>
-    // Randomly select gif/gif1.gif to gif/gif7.gif as background
-    const gifNum = Math.floor(Math.random() * 10) + 1;
-    const bgGif = `lepau.pro/gif/${gifNum}.gif`;
+    // Randomly select gif1.gif to gif7.gif as background
+    const gifNum = Math.floor(Math.random() * 7) + 1;
+    const bgGif = `https://lepau.pro/gif/${gifNum}.gif`;
     document.body.style.background = `url('${bgGif}') no-repeat center center fixed`;
     document.body.style.backgroundSize = 'cover';
   </script>
