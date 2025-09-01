@@ -81,6 +81,28 @@
         border-radius: 0;
       }
     }
+    /* --- lepa_u badge --- */
+    .lepa-badge {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 10000;
+      padding: 0.5em 1.1em;
+      font-size: 1rem;
+      background: rgba(30,30,47,0.85);
+      color: #a7c7ff;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 2px 12px #0004;
+      transition: background 0.2s, color 0.2s;
+      opacity: 0.88;
+    }
+    .lepa-badge:hover {
+      background: #7289da;
+      color: #fff;
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
@@ -89,6 +111,7 @@
     <a class="button" href="https://www.youtube.com/@nicothefunnydev0906" target="_blank">YouTube</a>
     <a class="button" href="https://discord.gg/XFPhHKKg9Z" target="_blank">Discord</a>
   </div>
+  <a class="lepa-badge" href="https://lepau.pro" target="_blank">made by lepa_u</a>
   <script>
     // Randomly select gif1.gif to gif7.gif as background
     const gifNum = Math.floor(Math.random() * 7) + 1;
