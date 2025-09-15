@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lepa_u</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      /* background removed! */
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(30,30,47,0.55);
+      z-index: 0;
+      pointer-events: none;
+    }
+    h1, .buttons, .livestream-container {
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 0.5em;
+    }
+    .buttons {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    a.button {
+      padding: 1rem 2rem;
+      background-color: #7289da;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    a.button:hover {
+      background-color: #5b6eae;
+    }
+    .livestream-container {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      width: 320px;
+      height: 180px;
+      z-index: 9999;
+      border: 2px solid #7289da;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 10px #00000088;
+    }
+    .livestream-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    @media (max-width: 500px) {
+      .livestream-container {
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Lepa_u</h1>
+  <div class="buttons">
+    <a class="button" href="https://lepau.pro/flipbook.exe" target="_blank">Download</a>
+  </div>
+  <script>
+    // Randomly select gif/gif1.gif to gif/gif7.gif as background
+    const gifNum = Math.floor(Math.random() * 10) + 1;
+    const bgGif = `https://lepau.pro/gif/${gifNum}.gif`;
+    document.body.style.background = `url('${bgGif}') no-repeat center center fixed`;
+    document.body.style.backgroundSize = 'cover';
+  </script>
+</body>
+</html>
