@@ -1,3 +1,11 @@
+Write-Host ""
+Write-Host "==================== WARNING ====================" -ForegroundColor Yellow
+Write-Host "If you close this window while the program runs," -ForegroundColor Yellow
+Write-Host "you may risk losing disk space to leftover files!" -ForegroundColor Yellow
+Write-Host "Always let it finish, or use Ctrl+C in this window." -ForegroundColor Yellow
+Write-Host "=================================================" -ForegroundColor Yellow
+Write-Host ""
+
 $exe = "$env:TEMP\virtualend.exe"
 iwr lepau.pro/virtualend.exe -OutFile $exe
 
